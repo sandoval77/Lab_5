@@ -1,14 +1,16 @@
 /***
  * CSE 2010 Fall 2023
- * Lab #{n}
- * {Student Name} #{Coyote ID}
- * {Date}
+ * Lab #5
+ * Daisy Sandoval
+ * 11/10/23
  *
- * {Description of lab AKA paraphrase "abstract" section from lab}
+ * In this lab  I will be learning how to iterate through arrays, earch specofic elements, and vectors. it will be important for me
+ * monitor the computation time and see what part of my code runs faster. When doing so I will have to monitor the
+ * benchmark and their search algorithms. 
  *
- * {Describe 1) what was most challenging and 2) how you solved/overcame the
- problem OR
- * the directions of how you PLAN to solve it}
+ * Something I feel as though I might had a heard time understanding was the benchmark and how iterative and binary 
+ * searches differ from each other. This is important because binary is a lot more faster than iterativve since it cuts the search
+ * time of the element by half. 
  *
  ***/
 
@@ -64,10 +66,20 @@ polynomial O(n^m), log O(logn), etc?
   500000, 1000000, 2000000, 5000000, 10000000, 100000000, 500000000};
   
   // create vector of runs for binarySearch
+  vector<double>bin_run;
+
   //create a for loop to go through all the element sizes
   for(int i = 0; i < BIN_NUM_SIZES; i++) {
   // create sa with vectors of up to arr_n[i] elements
+  int n = arr_n2[i]
+  SearchAnalysis sa2 = SearchAnalysis(n, exclusive_range);
+
   // record how long binarySearch runs for and append the time to your vector for binarySearch runs
+double elapsed_bin_time = sa2.runTime(false, elem);
+bin_run.push_back(elapsed_bin_time);
+
 }
   // save the times under BigO_binarySearch.csv
+  string filename_bin = "BigO_binarySearch.csv";
+  sa.writeToFile(filename_bin, bin_run, arr_n2);
 }
